@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:conv="clr-namespace:Plugin.XamarinForms.Converters;assembly=Plugin.XamarinForms.Converters"
+             mc:Ignorable="d" x:Class="Demo.MainPage"
+             Title="Demo" Padding="10,5" BackgroundColor="White">
+
+    <ContentPage.Content>
+
+        <ScrollView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" /><ColumnDefinition Width="*" /><ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" /><RowDefinition Height="35" /><RowDefinition Height="35" />
+                    <RowDefinition Height="35" /><RowDefinition Height="35" /><RowDefinition Height="35" />
+                    <RowDefinition Height="35" /><RowDefinition Height="35" /><RowDefinition Height="35" />
+                    <RowDefinition Height="35" /><RowDefinition Height="35" /><RowDefinition Height="35" />
+                    <RowDefinition Height="35" /><RowDefinition Height="35" /><RowDefinition Height="35" />
+                </Grid.RowDefinitions>
+
+<!--TEXT-->
+                <Entry Text="{Binding Text, Mode=TwoWay}" TextColor="DimGray" Placeholder="Enter a text"
+                       Keyboard="Text" Grid.ColumnSpan="3" />
+            
+                <Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="1" Grid.ColumnSpan="3" />
+            
+                <Label Text="{Binding Text, Converter={conv:ToUpperCaseConverter}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="2" Grid.ColumnSpan="3" />
+
+
+<!--NUMBER-->
+                <Entry Text="{Binding Number, Mode=TwoWay, FallbackValue=0}" TextColor="DimGray" Placeholder="Number"
+                       Keyboard="Numeric" Grid.Row="3" Grid.Column="0" />
+            
+                <Label Text="Number is equal to 10" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="4" Grid.ColumnSpan="2" />
+                <Label Style="{x:StaticResource lblDataStyle}" Grid.Row="4" Grid.Column="2">
+                    <Label.Text>
+                        <Binding Path="Number" Converter="{conv:EqualsConverter}"> 
+                            <Binding.ConverterParameter>
+                                <x:Double>10.0</x:Double>
+                            </Binding.ConverterParameter>
+                        </Binding>
+                    </Label.Text>
+                </Label>
+            
+                <Label Text="Number is positive (&gt; 0)" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="5" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsPositiveConverter}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="5" Grid.Column="2" />
+            
+                <Label Text="Number is negative (&lt; 0)" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="6" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsNegativeConverter}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="6" Grid.Column="2" />
+            
+                <Label Text="Number is non positive (&lt;= 0)" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="7" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsNonPositiveConverter}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="7" Grid.Column="2" />
+            
+                <Label Text="Number is non negative (&gt;= 0)" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="8" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsNonNegativeConverter}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="8" Grid.Column="2" />
+            
+                <Label Text="Number is &gt;= 99" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="9" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsGreaterOrEqualThanConverter}, ConverterParameter=99}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="9" Grid.Column="2" />
+            
+                <Label Text="Number is &gt; 55.9" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="10" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsGreaterThanConverter}, ConverterParameter=55.9}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="10" Grid.Column="2" />
+            
+                <Label Text="Number is &lt;= 11.1" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="11" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsLesserOrEqualThanConverter}, ConverterParameter=11.1}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="11" Grid.Column="2" />
+            
+                <Label Text="Number is &lt; -33.6" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="12" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsLesserThanConverter}, ConverterParameter=-33.6}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="12" Grid.Column="2" />
+
+
+<!--IS TOGGLED-->
+                <Switch IsToggled="{Binding IsToggled, Mode=TwoWay}" Grid.Row="13" />
+                <Label Text="Switch is OFF" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="13" Grid.Column="1" />
+                <Label Text="{Binding IsToggled, Converter={conv:InvertedBoolConverter}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="13" Grid.Column="2" />
+
+
+<!--NULL PROPERTY-->
+                <Button Text="Switch Null" TextColor="DimGray" BorderColor="DimGray" BorderWidth="1"
+                        Command="{Binding SwitchNullCommand}" Grid.Row="14"/>
+                <Label Style="{x:StaticResource lblDataStyle}" Grid.Row="14" Grid.Column="1">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Is Null: " />
+                            <Span Text="{Binding NullInteger, Converter={conv:IsNullConverter}}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label Style="{x:StaticResource lblDataStyle}" Grid.Row="14" Grid.Column="2">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Not Null: " />
+                            <Span Text="{Binding NullIntegerSwitched, Converter={conv:IsNullConverter}}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+
+</ContentPage>
