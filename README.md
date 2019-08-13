@@ -26,11 +26,9 @@ And then you can use it on this way:
 ```XML
 <Entry Text="{Binding Text, Mode=TwoWay}" TextColor="DimGray" Placeholder="Enter a text" Keyboard="Text" />
             
-<Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}}"
-        Style="{x:StaticResource lblDataStyle}" />
+<Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}}" />
             
-<Label Text="{Binding Text, Converter={conv:ToUpperCaseConverter}}"
-        Style="{x:StaticResource lblDataStyle}" Grid.Row="2" Grid.ColumnSpan="3" />
+<Label Text="{Binding Text, Converter={conv:ToUpperCaseConverter}}" />
 ```
 
 &nbsp;
