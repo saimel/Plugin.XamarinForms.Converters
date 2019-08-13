@@ -75,7 +75,7 @@ And then you can use it on this way:
     <Label.FormattedText>
         <FormattedString>
             <Span Text="Is non negative: " />
-            <Span Text="{Binding YourNumber, Converter={conv:IsNonPositiveConverter}}" />
+            <Span Text="{Binding YourNumber, Converter={conv:IsNonNegativeConverter}}" />
         </FormattedString>
     </Label.FormattedText>
 </Label>
