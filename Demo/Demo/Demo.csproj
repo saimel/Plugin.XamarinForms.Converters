@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Plugin.XamarinForms.Converters" Version="1.0.0" />
+    <PackageReference Include="Plugin.XamarinForms.Converters" Version="1.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>

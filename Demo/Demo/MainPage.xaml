@@ -28,8 +28,8 @@
             
                 <Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}}"
                        Style="{x:StaticResource lblDataStyle}" Grid.Row="1" Grid.ColumnSpan="3" />
-            
-                <Label Text="{Binding Text, Converter={conv:ToUpperCaseConverter}}"
+
+                <Label Text="{Binding Text, Converter={conv:SubstringConverter}}"
                        Style="{x:StaticResource lblDataStyle}" Grid.Row="2" Grid.ColumnSpan="3" />
 
 
