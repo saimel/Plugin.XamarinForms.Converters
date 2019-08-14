@@ -19,9 +19,9 @@ namespace Plugin.XamarinForms.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             int length = 50;
-            if (string.IsNullOrEmpty(parameter.ToString()) == true)
+            if (string.IsNullOrEmpty((string)parameter) == false)
             {
-                length = int.Parse(parameter.ToString());
+                length = int.Parse((string)parameter);
             }
 
             var input = (string)value;

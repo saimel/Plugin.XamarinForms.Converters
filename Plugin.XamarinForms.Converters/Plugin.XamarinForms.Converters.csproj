@@ -9,7 +9,8 @@
     <PackageLicenseUrl>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/saimel/Plugin.XamarinForms.Converters</PackageProjectUrl>
     <PackageTags>Xamarin Forms; XAML; Converter</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
+    <PackageReleaseNotes>Fix bug on SubstringConverter</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,6 @@
     <Folder Include="Number\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.539721" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.673161-pre3" />
   </ItemGroup>
 </Project>
