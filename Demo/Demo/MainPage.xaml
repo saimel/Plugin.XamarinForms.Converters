@@ -27,10 +27,10 @@
                        Keyboard="Text" Grid.ColumnSpan="3" />
             
                 <Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}}"
-                       Style="{x:StaticResource lblDataStyle}" Grid.Row="1" Grid.ColumnSpan="3" />
-            
-                <Label Text="{Binding Text, Converter={conv:ToUpperCaseConverter}}"
-                       Style="{x:StaticResource lblDataStyle}" Grid.Row="2" Grid.ColumnSpan="3" />
+                       Style="{x:StaticResource lblCaptionStyle}" Grid.Row="1" Grid.ColumnSpan="3" />
+
+                <Label Text="{Binding Text, Converter={conv:SubstringConverter}, ConverterParameter=10}"
+                       Style="{x:StaticResource lblCaptionStyle}" Grid.Row="2" Grid.ColumnSpan="3" />
 
 
 <!--NUMBER-->
