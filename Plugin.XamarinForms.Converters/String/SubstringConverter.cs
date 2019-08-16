@@ -1,10 +1,11 @@
-﻿// IsGreaterThanConverter.cs
+﻿// SubstringConverter.cs
 //
 // Author: Saimel Saez <saimelsaez@gmail.com>
 //
-// 8/12/2019
+// 8/13/2019
 //
 // --------------------------------------------------
+
 
 using System;
 using System.Globalization;
@@ -13,18 +14,23 @@ using Xamarin.Forms.Xaml;
 
 namespace Plugin.XamarinForms.Converters
 {
-    public class IsGreaterThanConverter : IValueConverter, IMarkupExtension
+    public class SubstringConverter : IValueConverter, IMarkupExtension
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            double pValue = double.Parse(parameter.ToString(), NumberStyles.Number);
-
-            if (value is string && string.IsNullOrEmpty((string)value) == true)
+            int length = 50;
+            if (string.IsNullOrEmpty((string)parameter) == false)
             {
-                return 0d > pValue;
+                length = int.Parse((string)parameter);
             }
 
-            return double.Parse(value.ToString()) > pValue;
+            var input = (string)value;
+            if (input.Length <= length)
+            {
+                return input;
+            }
+
+            return string.Format("{0}...", input.Substring(0, length));
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

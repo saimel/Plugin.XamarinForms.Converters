@@ -1,21 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Saimel Saez saimelsaez@gmail.com</Authors>
+    <Company />
+    <Description>Bunch of useful XAML converters for Xamarin Forms</Description>
+    <PackageLicenseUrl>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/saimel/Plugin.XamarinForms.Converters</PackageProjectUrl>
+    <PackageTags>Xamarin Forms; XAML; Converter</PackageTags>
+    <Version>1.0.4</Version>
+    <PackageReleaseNotes>Fix bug on SubstringConverter</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Class1.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.ComponentModel" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="General\" />
     <Folder Include="Number\" />
-    <Folder Include="String\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.539721" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.673161-pre3" />
   </ItemGroup>
 </Project>
