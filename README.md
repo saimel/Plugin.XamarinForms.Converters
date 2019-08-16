@@ -37,7 +37,7 @@ __Note:__ `SubstringConverter` truncates the input string to the length provided
 #### There are more useful converters in this package you can use
 
 * __General__
-  * EqualsConverter (required parameter)
+  * EqualsConverter _(required parameter)_
   * InvertedBoolConverter
   * IsNotNullConverter
   * IsNullConverter
@@ -46,12 +46,12 @@ __Note:__ `SubstringConverter` truncates the input string to the length provided
   * IsNegativeConverter
   * IsNonPositiveConverter
   * IsNonNegativeConverter
-  * IsLesserThanConverter (required parameter)
-  * IsLesserOrEqualThanConverter (required parameter)
-  * IsGreaterThanConverter (required parameter)
-  * IsGreaterOrEqualThanConverter (required parameter)
+  * IsLesserThanConverter _(required parameter)_
+  * IsLesserOrEqualThanConverter _(required parameter)_
+  * IsGreaterThanConverter _(required parameter)_
+  * IsGreaterOrEqualThanConverter _(required parameter)_
 * __String__
-  * SubstringConverter (optional parameter)
+  * SubstringConverter _(optional parameter)_
   * ToLowerCaseConverter
   * ToUpperCaseConverter
 
