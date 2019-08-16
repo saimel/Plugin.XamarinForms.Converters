@@ -24,7 +24,7 @@ namespace Plugin.XamarinForms.Converters
                 return 0d <= pValue;
             }
 
-            return (double)value <= pValue;
+            return double.Parse(value.ToString()) <= pValue;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

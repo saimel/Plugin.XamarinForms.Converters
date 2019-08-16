@@ -23,7 +23,7 @@ namespace Plugin.XamarinForms.Converters
                 return true;
             }
 
-            return (double)value >= 0.0;
+            return double.Parse(value.ToString()) >= 0.0;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
