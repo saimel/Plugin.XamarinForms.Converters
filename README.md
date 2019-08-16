@@ -31,15 +31,13 @@ And then you can use it on this way:
 <Label Text="{Binding Text, Converter={conv:SubstringConverter}, ConverterParameter=35}" />
 ```
 
-&nbsp;
-
-__Note:__ `SubstringConverter` truncates the input string to the length provided in `ConverterParameter` or to 50 characters if no value is provided and appends three dots if input lenght is greater than provided length.
+__Note:__ `SubstringConverter` truncates the input string to the length provided in `ConverterParameter` or to 50 characters if no value was provided and appends three dots if input lenght is greater than provided length.
 
 
 #### There are more useful converters in this package you can use
 
 * __General__
-  * EqualsConverter
+  * EqualsConverter (required parameter)
   * InvertedBoolConverter
   * IsNotNullConverter
   * IsNullConverter
@@ -48,12 +46,12 @@ __Note:__ `SubstringConverter` truncates the input string to the length provided
   * IsNegativeConverter
   * IsNonPositiveConverter
   * IsNonNegativeConverter
-  * IsLesserThanConverter
-  * IsLesserOrEqualThanConverter
-  * IsGreaterThanConverter
-  * IsGreaterOrEqualThanConverter
+  * IsLesserThanConverter (required parameter)
+  * IsLesserOrEqualThanConverter (required parameter)
+  * IsGreaterThanConverter (required parameter)
+  * IsGreaterOrEqualThanConverter (required parameter)
 * __String__
-  * SubstringConverter
+  * SubstringConverter (optional parameter)
   * ToLowerCaseConverter
   * ToUpperCaseConverter
 
