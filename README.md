@@ -29,9 +29,14 @@ And then you can use it on this way:
 <Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}}" />
             
 <Label Text="{Binding Text, Converter={conv:SubstringConverter}, ConverterParameter=35}" />
+
+<Entry Text="{Binding Number, Mode=TwoWay, Converter={conv:EmptyStringToZeroConverter}}" Keyboard="Numeric" />
 ```
 
-__Note:__ `SubstringConverter` truncates the input string to the length provided in `ConverterParameter` or to 50 characters if no value was provided and appends three dots if input lenght is greater than provided length.
+__Notes:__ 
+
+1. `SubstringConverter` truncates the input string to the length provided in `ConverterParameter` or to 50 characters if no value was provided and appends three dots if input lenght is greater than provided length.
+2. `EmptyStringToZeroConverter` will replace empty string with `0` if `BindingMode` is `TwoWay`. 
 
 
 #### There are more useful converters in this package you can use
@@ -54,6 +59,7 @@ __Note:__ `SubstringConverter` truncates the input string to the length provided
   * SubstringConverter _(optional parameter)_
   * ToLowerCaseConverter
   * ToUpperCaseConverter
+  * EmptyStringToZeroConverter
 
 ## More examples
 

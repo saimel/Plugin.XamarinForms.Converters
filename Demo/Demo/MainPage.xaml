@@ -34,7 +34,7 @@
 
 
 <!--NUMBER-->
-                <Entry Text="{Binding Number, Mode=TwoWay, FallbackValue=0}" TextColor="DimGray" Placeholder="Number"
+                <Entry Text="{Binding Number, Mode=TwoWay, Converter={conv:EmptyStringToZeroConverter}}" TextColor="DimGray" Placeholder="Number"
                        Keyboard="Numeric" Grid.Row="3" Grid.Column="0" />
             
                 <Label Text="Number is equal to 10" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="4" Grid.ColumnSpan="2" />
