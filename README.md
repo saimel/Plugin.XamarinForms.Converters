@@ -19,6 +19,8 @@ First, you just need to add the reference in your XAML file:
 
 ```XML
 xmlns:conv="clr-namespace:Plugin.XamarinForms.Converters;assembly=Plugin.XamarinForms.Converters"
+
+xmlns:enum="clr-namespace:Demo.Enums"
 ```
 
 And then you can use it on this way:
@@ -31,6 +33,32 @@ And then you can use it on this way:
 <Label Text="{Binding Text, Converter={conv:SubstringConverter}, ConverterParameter=35}" />
 
 <Entry Text="{Binding Number, Mode=TwoWay, Converter={conv:EmptyStringToZeroConverter}}" Keyboard="Numeric" />
+
+<Picker ItemDisplayBinding="{Binding ., Converter={conv:EnumDisplayNameConverter}}"
+        SelectedItem="{Binding EventType, Mode=TwoWay}">
+    <Picker.ItemsSource>
+        <x:Array Type="{x:Type enum:EventType}">
+            <enum:EventType>None</enum:EventType>
+            <enum:EventType>Movie</enum:EventType>
+            <enum:EventType>Concert</enum:EventType>
+            <enum:EventType>Sports</enum:EventType>
+            <enum:EventType>CityTour</enum:EventType>
+        </x:Array>
+    </Picker.ItemsSource>
+</Picker>
+```
+Enum declaration:
+
+```C#
+public enum EventType
+{
+    None,
+    Movie,
+    Concert,
+    Sports,
+    [Description("City Tour")]
+    CityTour
+}
 ```
 
 __Notes:__ 
@@ -46,6 +74,7 @@ __Notes:__
   * InvertedBoolConverter
   * IsNotNullConverter
   * IsNullConverter
+  * EnumDisplayNameConverter
 * __Number__
   * IsPositiveConverter
   * IsNegativeConverter
