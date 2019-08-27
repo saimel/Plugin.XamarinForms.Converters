@@ -9,6 +9,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using Demo.Enums;
 using Xamarin.Forms;
 
 namespace Demo
@@ -17,6 +18,7 @@ namespace Demo
     {
         private string _text;
         private double _number;
+        private EventType _eventType;
         private bool _isToggled;
         private int? _nullInteger;
 
@@ -36,6 +38,15 @@ namespace Demo
             set
             {
                 _number = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public EventType EventType
+        {
+            get => _eventType;
+            set {
+                _eventType = value;
                 NotifyPropertyChanged();
             }
         }
@@ -81,7 +92,9 @@ namespace Demo
 
         public MainPageViewModel()
         {
-            Text = string.Empty;
+            _text = string.Empty;
+            _eventType = EventType.None;
+
             SwitchNullCommand = new Command(
                 execute: () =>
                 {
