@@ -8,9 +8,9 @@
     <Description>Bunch of useful XAML converters for Xamarin Forms</Description>
     <PackageLicenseUrl>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/saimel/Plugin.XamarinForms.Converters</PackageProjectUrl>
-    <PackageTags>Xamarin Forms; XAML; Converter</PackageTags>
-    <Version>1.0.5</Version>
-    <PackageReleaseNotes>Fix bug on installed Xamarin Forms version</PackageReleaseNotes>
+    <PackageTags>Xamarin Forms; XAML; Converter; Converters; Plugin</PackageTags>
+    <Version>1.0.7</Version>
+    <PackageReleaseNotes>Add EnumDescriptionConverter</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
