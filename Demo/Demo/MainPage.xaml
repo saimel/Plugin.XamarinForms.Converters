@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:enum="clr-namespace:Demo.Enums"
              xmlns:conv="clr-namespace:Plugin.XamarinForms.Converters;assembly=Plugin.XamarinForms.Converters"
              mc:Ignorable="d" x:Class="Demo.MainPage"
              Title="Demo" Padding="10,5" BackgroundColor="White">
@@ -20,6 +21,7 @@
                     <RowDefinition Height="35" /><RowDefinition Height="35" /><RowDefinition Height="35" />
                     <RowDefinition Height="35" /><RowDefinition Height="35" /><RowDefinition Height="35" />
                     <RowDefinition Height="35" /><RowDefinition Height="35" /><RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
 
 <!--TEXT-->
@@ -108,6 +110,20 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+
+                <!--PICKER-->
+                <Picker TextColor="DimGray" ItemDisplayBinding="{Binding ., Converter={conv:EnumDisplayNameConverter}}"
+                        SelectedItem="{Binding EventType, Mode=TwoWay}" Grid.Row="15" Grid.ColumnSpan="3">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type enum:EventType}">
+                            <enum:EventType>None</enum:EventType>
+                            <enum:EventType>Movie</enum:EventType>
+                            <enum:EventType>Concert</enum:EventType>
+                            <enum:EventType>Sports</enum:EventType>
+                            <enum:EventType>CityTour</enum:EventType>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
 
             </Grid>
         </ScrollView>
