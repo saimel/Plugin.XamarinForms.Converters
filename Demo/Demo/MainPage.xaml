@@ -112,7 +112,7 @@
                 </Label>
 
                 <!--PICKER-->
-                <Picker TextColor="DimGray" ItemDisplayBinding="{Binding ., Converter={conv:EnumDisplayNameConverter}}"
+                <Picker TextColor="DimGray" ItemDisplayBinding="{Binding ., Converter={conv:EnumDescriptionConverter}}"
                         SelectedItem="{Binding EventType, Mode=TwoWay}" Grid.Row="15" Grid.ColumnSpan="3">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type enum:EventType}">
