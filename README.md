@@ -34,7 +34,7 @@ And then you can use it on this way:
 
 <Entry Text="{Binding Number, Mode=TwoWay, Converter={conv:EmptyStringToZeroConverter}}" Keyboard="Numeric" />
 
-<Picker ItemDisplayBinding="{Binding ., Converter={conv:EnumDisplayNameConverter}}"
+<Picker ItemDisplayBinding="{Binding ., Converter={conv:EnumDescriptionConverter}}"
         SelectedItem="{Binding EventType, Mode=TwoWay}">
     <Picker.ItemsSource>
         <x:Array Type="{x:Type enum:EventType}">
@@ -74,7 +74,7 @@ __Notes:__
   * InvertedBoolConverter
   * IsNotNullConverter
   * IsNullConverter
-  * EnumDisplayNameConverter
+  * EnumDescriptionConverter
 * __Number__
   * IsPositiveConverter
   * IsNegativeConverter
