@@ -1,8 +1,8 @@
-﻿// EqualsConverter.cs
+﻿// EmptyToNullNumberConverter.cs
 //
 // Author: Saimel Saez <saimelsaez@gmail.com>
 //
-// 8/12/2019
+// 8/22/2019
 //
 // --------------------------------------------------
 
@@ -13,19 +13,20 @@ using Xamarin.Forms.Xaml;
 
 namespace Plugin.XamarinForms.Converters
 {
-    public class EqualsConverter : IValueConverter, IMarkupExtension
+    public class EmptyToNullNumberConverter : IValueConverter, IMarkupExtension
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null) {
-                return parameter == null;
-            }
-
-            return value.Equals(parameter);
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
+           if(value == null || string.IsNullOrEmpty(value.ToString()))
+            {
+                return null;
+            }
+
             return value;
         }
 

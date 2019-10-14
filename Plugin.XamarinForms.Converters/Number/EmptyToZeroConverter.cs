@@ -1,8 +1,8 @@
-﻿// EmptyStringToZeroConverter.cs
+﻿// EmptyToZeroConverter.cs
 //
 // Author: Saimel Saez <saimelsaez@gmail.com>
 //
-// 8/22/2019
+// 10/14/2019
 //
 // --------------------------------------------------
 
@@ -13,31 +13,21 @@ using Xamarin.Forms.Xaml;
 
 namespace Plugin.XamarinForms.Converters
 {
-    public class EmptyStringToZeroConverter : IValueConverter, IMarkupExtension
+    public class EmptyToZeroConverter : IValueConverter, IMarkupExtension
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null)
-            {
-                return 0;
-            }
-
-            if (int.TryParse(value.ToString(), out int result) == true)
-            {
-                return result;
-            }
-
-            return 0;
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (string.IsNullOrEmpty(value as string) == true)
+            if (value == null || string.IsNullOrEmpty(value.ToString()))
             {
-                return "0";
+                return 0;
             }
 
-            return value.ToString();
+            return value;
         }
 
         public object ProvideValue(IServiceProvider serviceProvider)

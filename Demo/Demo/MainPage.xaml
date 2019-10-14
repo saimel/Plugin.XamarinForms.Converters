@@ -26,9 +26,9 @@
 
 <!--TEXT-->
                 <Entry Text="{Binding Text, Mode=TwoWay}" TextColor="DimGray" Placeholder="Enter a text"
-                       Keyboard="Text" Grid.ColumnSpan="3" />
+                       Keyboard="Text" Grid.ColumnSpan="2" />
             
-                <Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}}"
+                <Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}, Mode=TwoWay}"
                        Style="{x:StaticResource lblCaptionStyle}" Grid.Row="1" Grid.ColumnSpan="3" />
 
                 <Label Text="{Binding Text, Converter={conv:SubstringConverter}, ConverterParameter=10}"
@@ -36,8 +36,13 @@
 
 
 <!--NUMBER-->
-                <Entry Text="{Binding Number, Mode=TwoWay, Converter={conv:EmptyStringToZeroConverter}}" TextColor="DimGray" Placeholder="Number"
+                <Entry Text="{Binding Number, Converter={conv:EmptyToZeroConverter}}"
+                       TextColor="DimGray" Placeholder="Number"
                        Keyboard="Numeric" Grid.Row="3" Grid.Column="0" />
+
+                <Entry Text="{Binding NullInteger, Mode=TwoWay, Converter={conv:EmptyToNullNumberConverter}}"
+                       TextColor="DimGray" Placeholder="Null Number"
+                       Grid.Row="3" Grid.Column="1" />
             
                 <Label Text="Number is equal to 10" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="4" Grid.ColumnSpan="2" />
                 <Label Style="{x:StaticResource lblDataStyle}" Grid.Row="4" Grid.Column="2">
