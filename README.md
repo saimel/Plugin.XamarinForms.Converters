@@ -82,7 +82,7 @@ public enum EventType
   * IsGreaterThanConverter _(required parameter)_
   * IsGreaterOrEqualThanConverter _(required parameter)_  
 * __String__
-  * SubstringConverter [[Read more]](#substringconverter)</sup> _(optional parameter)_
+  * SubstringConverter <sup>[[Read more]](#substringconverter)</sup> _(optional parameter)_
   * ToLowerCaseConverter
   * ToUpperCaseConverterer
 
