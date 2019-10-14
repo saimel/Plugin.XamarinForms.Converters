@@ -75,7 +75,9 @@ __Notes:__
   * IsNotNullConverter
   * IsNullConverter
   * EnumDescriptionConverter
+  
 * __Number__
+  * EmptyStringToZeroConvert <sup>[[Read more]](#important-information)</sup> _(not recommended for nullable properties)_
   * IsPositiveConverter
   * IsNegativeConverter
   * IsNonPositiveConverter
@@ -84,11 +86,12 @@ __Notes:__
   * IsLesserOrEqualThanConverter _(required parameter)_
   * IsGreaterThanConverter _(required parameter)_
   * IsGreaterOrEqualThanConverter _(required parameter)_
+  * NullableNumberConverter <sup>[[Read more]](#important-information)</sup>
+  
 * __String__
   * SubstringConverter _(optional parameter)_
   * ToLowerCaseConverter
-  * ToUpperCaseConverter
-  * EmptyStringToZeroConverter
+  * ToUpperCaseConverterer
 
 ## More examples
 
@@ -126,3 +129,7 @@ __Notes:__
     </Label.FormattedText>
 </Label>
 ```
+
+## Important information
+
+Bla bla

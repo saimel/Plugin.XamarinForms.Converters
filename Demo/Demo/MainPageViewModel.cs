@@ -37,8 +37,10 @@ namespace Demo
             get => _number;
             set
             {
+                System.Diagnostics.Debug.WriteLine($"before: {_number}");
                 _number = value;
                 NotifyPropertyChanged();
+                System.Diagnostics.Debug.WriteLine($"after: {_number}");
             }
         }
 
@@ -92,7 +94,7 @@ namespace Demo
 
         public MainPageViewModel()
         {
-            _text = string.Empty;
+            _text = "HELLO WORLD";
             _eventType = EventType.None;
 
             SwitchNullCommand = new Command(
