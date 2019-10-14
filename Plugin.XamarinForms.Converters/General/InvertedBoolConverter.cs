@@ -23,7 +23,7 @@ namespace Plugin.XamarinForms.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            return value;
         }
 
         public object ProvideValue(IServiceProvider serviceProvider)

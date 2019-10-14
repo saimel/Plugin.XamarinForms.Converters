@@ -1,4 +1,4 @@
-﻿// EmptyStringToZeroConverter.cs
+﻿// EmptyToZeroConverter.cs
 //
 // Author: Saimel Saez <saimelsaez@gmail.com>
 //
