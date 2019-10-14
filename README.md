@@ -32,7 +32,7 @@ And then you can use it on this way:
             
 <Label Text="{Binding Text, Converter={conv:SubstringConverter}, ConverterParameter=35}" />
 
-<Entry Text="{Binding Number, Mode=TwoWay, Converter={conv:EmptyStringToZeroConverter}}" Keyboard="Numeric" />
+<Entry Text="{Binding Number, Mode=TwoWay, Converter={conv:EmptyToZeroConverter}}" Keyboard="Numeric" />
 
 <Picker ItemDisplayBinding="{Binding ., Converter={conv:EnumDescriptionConverter}}"
         SelectedItem="{Binding EventType, Mode=TwoWay}">
