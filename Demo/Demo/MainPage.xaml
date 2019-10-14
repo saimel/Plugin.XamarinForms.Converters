@@ -36,11 +36,11 @@
 
 
 <!--NUMBER-->
-                <Entry Text="{Binding Number, Converter={conv:EmptyStringToZeroConverter}}"
+                <Entry Text="{Binding Number, Converter={conv:EmptyToZeroConverter}}"
                        TextColor="DimGray" Placeholder="Number"
                        Keyboard="Numeric" Grid.Row="3" Grid.Column="0" />
 
-                <Entry Text="{Binding NullInteger, Mode=TwoWay, Converter={conv:NullableNumberConverter}}"
+                <Entry Text="{Binding NullInteger, Mode=TwoWay, Converter={conv:EmptyToNullNumberConverter}}"
                        TextColor="DimGray" Placeholder="Null Number"
                        Grid.Row="3" Grid.Column="1" />
             

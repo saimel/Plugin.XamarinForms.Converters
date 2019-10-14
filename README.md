@@ -61,12 +61,6 @@ public enum EventType
 }
 ```
 
-__Notes:__ 
-
-1. `SubstringConverter` truncates the input string to the length provided in `ConverterParameter` or to 50 characters if no value was provided and appends three dots if input lenght is greater than provided length.
-2. `EmptyStringToZeroConverter` will replace empty string with `0` if `BindingMode` is `TwoWay`. 
-
-
 #### There are more useful converters in this package you can use
 
 * __General__
@@ -77,7 +71,8 @@ __Notes:__
   * EnumDescriptionConverter
   
 * __Number__
-  * EmptyStringToZeroConvert <sup>[[Read more]](#important-information)</sup> _(not recommended for nullable properties)_
+  * EmptyToNullNumberConverter <sup>[[Read more]](#emptyto_converter)</sup>
+  * EmptyToZeroConverter <sup>[[Read more]](#emptyto_converter)</sup> _(do not use for nullable properties)_
   * IsPositiveConverter
   * IsNegativeConverter
   * IsNonPositiveConverter
@@ -85,11 +80,9 @@ __Notes:__
   * IsLesserThanConverter _(required parameter)_
   * IsLesserOrEqualThanConverter _(required parameter)_
   * IsGreaterThanConverter _(required parameter)_
-  * IsGreaterOrEqualThanConverter _(required parameter)_
-  * NullableNumberConverter <sup>[[Read more]](#important-information)</sup>
-  
+  * IsGreaterOrEqualThanConverter _(required parameter)_  
 * __String__
-  * SubstringConverter _(optional parameter)_
+  * SubstringConverter [[Read more]](#substringconverter)</sup> _(optional parameter)_
   * ToLowerCaseConverter
   * ToUpperCaseConverterer
 
@@ -130,6 +123,15 @@ __Notes:__
 </Label>
 ```
 
-## Important information
+## Detailed information
 
-Bla bla
+#### EmptyTo_Converter
+
+When binding an entry to a numeric property, deleting entry's text on the UI doesn't update the target property.
+__Ex:__ If the entry value is `123` and you start deleting, in some point the value will be `1` for both UI and view model. If you continue deleting the text on the UI will be an empty string however, binded property in view model stills `1`. By using these converters if you clear the entry, your binded property in view model will be `null` or `0`, depending of which converter is been used.
+
+#### SubstringConverter
+
+Truncates the input string to the length provided in `ConverterParameter` or to 50 characters if no value was provided. Also appends three dots if input's lenght is greater than provided length.
+
+
