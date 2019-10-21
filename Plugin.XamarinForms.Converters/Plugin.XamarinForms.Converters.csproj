@@ -9,8 +9,8 @@
     <PackageLicenseUrl>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/saimel/Plugin.XamarinForms.Converters</PackageProjectUrl>
     <PackageTags>Xamarin Forms; XAML; Converter; Converters; Plugin</PackageTags>
-    <Version>1.0.7</Version>
-    <PackageReleaseNotes>Add EnumDescriptionConverter</PackageReleaseNotes>
+    <Version>1.0.8</Version>
+    <PackageReleaseNotes>Add EmpyToNullConverter and fix some minor bugs</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
