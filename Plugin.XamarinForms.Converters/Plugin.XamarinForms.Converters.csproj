@@ -9,14 +9,13 @@
     <PackageLicenseUrl>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/saimel/Plugin.XamarinForms.Converters</PackageProjectUrl>
     <PackageTags>Xamarin Forms; XAML; Converter; Converters; Plugin</PackageTags>
-    <Version>1.0.7</Version>
-    <PackageReleaseNotes>Add EnumDescriptionConverter</PackageReleaseNotes>
+    <Version>1.0.9</Version>
+    <PackageReleaseNotes>Add ByteArrayToImageConverter</PackageReleaseNotes>
+    <PackOnBuild>true</PackOnBuild>
+    <Owners>Saimel Saez saimelsaez@gmail.com</Owners>
+    <Title>Plugin.XamarinForms.Converters</Title>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="General\" />
-    <Folder Include="Number\" />
-  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.539721" />
   </ItemGroup>

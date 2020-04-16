@@ -69,6 +69,9 @@ public enum EventType
   * IsNotNullConverter
   * IsNullConverter
   * EnumDescriptionConverter
+
+* __Image__
+  * ByteArrayToImageConverter <sup>[[Read more]](#bytearraytoimageconverter)</sup>
   
 * __Number__
   * EmptyToNullNumberConverter <sup>[[Read more]](#emptyto_converter)</sup>
@@ -124,6 +127,9 @@ public enum EventType
 ```
 
 ## Detailed information
+
+#### ByteArrayToImageConverter
+For some reason I was required once to retreive byte array from images. After a couple of hours looking for a solution and trying out some approaches I found at __Stack Overflow__ I realized there wasn't an easy way to do it. So I decided to keep my `ItemsSource` as `byte[]` and then use a converter to bind it in my XAML. So that's it.
 
 #### EmptyTo_Converter
 
