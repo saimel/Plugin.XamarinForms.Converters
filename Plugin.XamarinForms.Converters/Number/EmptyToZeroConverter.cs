@@ -17,6 +17,26 @@ namespace Plugin.XamarinForms.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (value == null)
+            {
+                return string.Empty;
+            }
+
+            if (value is double)
+            {
+                return (double)value == 0d ? string.Empty : value;
+            }
+
+            if (value is int)
+            {
+                return (int)value == 0d ? string.Empty : value;
+            }
+
+            if (value is long)
+            {
+                return (long)value == 0d ? string.Empty : value;
+            }
+
             return value;
         }
 
