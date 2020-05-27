@@ -46,6 +46,8 @@ And then you can use it on this way:
         </x:Array>
     </Picker.ItemsSource>
 </Picker>
+
+<Label Text="{Binding YourBooleanValue, Converter={conv:BoolToObjectConverter IfTrue='Represents True', IfFalse=500}}" />
 ```
 Enum declaration:
 
@@ -69,6 +71,7 @@ public enum EventType
   * IsNotNullConverter
   * IsNullConverter
   * EnumDescriptionConverter
+  * BoolToObjectConverter <sup>[[Read more]](#booltoobjectconverter)</sup> _(requires additional properties)_ 
 
 * __Image__
   * ByteArrayToImageConverter <sup>[[Read more]](#bytearraytoimageconverter)</sup>
@@ -127,6 +130,9 @@ public enum EventType
 ```
 
 ## Detailed information
+
+#### BoolToObjectConverter
+This converter defines two properties `IfTrue` and `IfFalse` of type `object`. These properties represent the values you want to be returned depending on the boolean value of the bindable property you are using.
 
 #### ByteArrayToImageConverter
 For some reason I was required once to retreive byte array from images. After a couple of hours looking for a solution and trying out some approaches I found at __Stack Overflow__ I realized there wasn't an easy way to do it. So I decided to keep my `ItemsSource` as `byte[]` and then use a converter to bind it in my XAML. So that's it.
