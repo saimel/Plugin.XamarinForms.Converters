@@ -6,7 +6,8 @@
              xmlns:enum="clr-namespace:Demo.Enums"
              xmlns:conv="clr-namespace:Plugin.XamarinForms.Converters;assembly=Plugin.XamarinForms.Converters"
              mc:Ignorable="d" x:Class="Demo.MainPage"
-             Title="Demo" Padding="10,5" BackgroundColor="White">
+             Title="Demo" Padding="10,5" BackgroundColor="White"
+             x:Name="_self">
 
     <ContentPage.Content>
 
@@ -129,6 +130,9 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
+
+                <Label Text="{Binding IsToggled, Converter={conv:BoolToObjectConverter IfTrue='Is Toggled', IfFalse=500}}"
+                       Grid.Row="16" Grid.ColumnSpan="3" />
 
             </Grid>
         </ScrollView>
