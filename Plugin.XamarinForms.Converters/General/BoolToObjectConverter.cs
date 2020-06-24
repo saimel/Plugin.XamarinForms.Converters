@@ -26,7 +26,7 @@ namespace Plugin.XamarinForms.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value == IfTrue;
+            return Equals(value, IfTrue);
         }
 
         public object ProvideValue(IServiceProvider serviceProvider)
