@@ -146,4 +146,4 @@ __Ex:__ If the entry value is `123` and you start deleting, in some point the va
 
 Truncates the input string to the length provided in `ConverterParameter` or to 50 characters if no value was provided. Also appends three dots if input's lenght is greater than provided length.
 
-
+# Good luck!
