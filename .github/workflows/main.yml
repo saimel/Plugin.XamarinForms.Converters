@@ -1,14 +1,17 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: NuGet Package
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
+    types: [closed]
+    branches:
+      - master
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,32 +22,33 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Setup Net Core 
-      uses: actions/setup-dotnet@v1
-      with: 
-        source-url: https://github.com/saimel/index.json
-      env: 
-        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}} 
+      - name: Setup .Net Core @ Latest
+        uses: actions/setup-dotnet@v1
+        
+      - name: Install dependencies
+        run: dotnet restore
+          
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
+      
+      - name: Generate NuGet package
+        run: |
+          cd Plugin.XamarinForms.Converters
+          dotnet pack -c Release -o out  
+        
+      - name: Add My GPR to sources
+        shell: pwsh
+        env:  
+          PUBLISH_USER: ${{ secrets.PUBLISH_USER }}
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+        run: dotnet nuget add source https://nuget.pkg.github.com/saimel/index.json -n "MyGithub" -u $env:PUBLISH_USER -p $env:PUBLISH_TOKEN
+      
+      - name: Push generated package to Github registry
+        run: otnet nuget push ./Plugin.XamarinForms.Converters/out/*.nupkg --source "MyGithub" --skip-duplicate --no-symbols true
 
-    # Runs a set of commands using the runners shell
-    - name: Build and generate NuGet package
-      run: |
-        cd Plugin.XamarinForms.Converters
-        dotnet pack -c Debug -o out
-        
-    - name: Push generated package to Github Registry
-      run: dotnet nuget push ./Plugin.XamarinForms.Converters/out/*.nupkg --skip-duplicate --no-symbols true
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
