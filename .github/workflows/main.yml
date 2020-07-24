@@ -29,7 +29,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         
       - name: Install dependencies
-        run: dotnet restore
+        run: |
+          cd Plugin.XamarinForms.Converters
+          dotnet restore
           
       - name: Build
         run: dotnet build --configuration Release --no-restore
@@ -39,7 +41,6 @@ jobs:
       
       - name: Generate NuGet package
         run: |
-          cd Plugin.XamarinForms.Converters
           dotnet pack -c Release -o out  
         
       - name: Add My GPR to sources
