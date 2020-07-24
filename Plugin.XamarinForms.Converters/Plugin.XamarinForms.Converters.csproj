@@ -6,7 +6,7 @@
     <Authors>Saimel Saez saimelsaez@gmail.com</Authors>
     <Company />
     <Description>Bunch of useful XAML converters for Xamarin Forms</Description>
-    <PackageLicenseUrl>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicense>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicense>
     <PackageProjectUrl>https://github.com/saimel/Plugin.XamarinForms.Converters</PackageProjectUrl>
     <PackageTags>Xamarin Forms; XAML; Converter; Converters; Plugin</PackageTags>
     <Version>1.2.1</Version>
@@ -14,7 +14,9 @@
     <PackOnBuild>true</PackOnBuild>
     <Owners>Saimel Saez saimelsaez@gmail.com</Owners>
     <Title>Plugin.XamarinForms.Converters</Title>
-    <Copyright>1.2.1</Copyright>
+    <Copyright>1.2.1.1</Copyright>
+    <PackageVersion>1.2.1.1</PackageVersion>
+    <PackageLicenseUrl>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicenseUrl>
   </PropertyGroup>
   
   <ItemGroup>
