@@ -10,12 +10,12 @@
     <PackageProjectUrl>https://github.com/saimel/Plugin.XamarinForms.Converters</PackageProjectUrl>
     <PackageTags>Xamarin Forms; XAML; Converter; Converters; Plugin</PackageTags>
     <Version>1.2.1</Version>
-    <PackageReleaseNotes>Add BoolToObjectConverter</PackageReleaseNotes>
+    <PackageReleaseNotes>Add IsNonNullOrWhitespaceConverter </PackageReleaseNotes>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Saimel Saez saimelsaez@gmail.com</Owners>
     <Title>Plugin.XamarinForms.Converters</Title>
     <Copyright>1.2.1.1</Copyright>
-    <PackageVersion>1.2.1.1</PackageVersion>
+    <PackageVersion>1.2.1.2</PackageVersion>
     <PackageLicenseUrl>https://github.com/saimel/Plugin.XamarinForms.Converters/blob/master/LICENSE.md</PackageLicenseUrl>
   </PropertyGroup>
   
