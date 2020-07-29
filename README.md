@@ -72,7 +72,6 @@ public enum EventType
   * IsNullConverter
   * EnumDescriptionConverter
   * BoolToObjectConverter <sup>[[Read more]](#booltoobjectconverter)</sup> _(requires additional properties)_ 
-  * IsNonNullOrWhitespaceConverter <sup>A collaboration from [[ronymesquita]](https://github.com/ronymesquita)</sup> 
 
 * __Image__
   * ByteArrayToImageConverter <sup>[[Read more]](#bytearraytoimageconverter)</sup>
@@ -93,6 +92,7 @@ public enum EventType
   * SubstringConverter <sup>[[Read more]](#substringconverter)</sup> _(optional parameter)_
   * ToLowerCaseConverter
   * ToUpperCaseConverterer
+  * IsNonNullOrWhitespaceConverter <sup>A collaboration from [[ronymesquita]](https://github.com/ronymesquita)</sup> 
 
 ## More examples
 
