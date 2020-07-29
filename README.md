@@ -72,6 +72,7 @@ public enum EventType
   * IsNullConverter
   * EnumDescriptionConverter
   * BoolToObjectConverter <sup>[[Read more]](#booltoobjectconverter)</sup> _(requires additional properties)_ 
+  * IsNonNullOrWhitespaceConverter <sup>A collaboration from [[ronymesquita]](https://github.com/ronymesquita)</sup> 
 
 * __Image__
   * ByteArrayToImageConverter <sup>[[Read more]](#bytearraytoimageconverter)</sup>
@@ -87,6 +88,7 @@ public enum EventType
   * IsLesserOrEqualThanConverter _(required parameter)_
   * IsGreaterThanConverter _(required parameter)_
   * IsGreaterOrEqualThanConverter _(required parameter)_  
+  
 * __String__
   * SubstringConverter <sup>[[Read more]](#substringconverter)</sup> _(optional parameter)_
   * ToLowerCaseConverter
