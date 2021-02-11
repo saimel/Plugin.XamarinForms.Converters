@@ -12,6 +12,8 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.673161-pre3" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.0-pre" />
-    <PackageReference Include="Plugin.XamarinForms.Converters" Version="1.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Plugin.XamarinForms.Converters\Plugin.XamarinForms.Converters.csproj" />
   </ItemGroup>
 </Project>

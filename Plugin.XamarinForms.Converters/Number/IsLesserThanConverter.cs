@@ -15,16 +15,16 @@ namespace Plugin.XamarinForms.Converters
 {
     public class IsLesserThanConverter : IValueConverter, IMarkupExtension
     {
+        public double MaxValue { get; set; }
+
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            double pValue = double.Parse(parameter.ToString(), NumberStyles.Number);
-
-            if (value is string && string.IsNullOrEmpty((string)value) == true)
+            if (value is string valueStr && (string.IsNullOrEmpty(valueStr) == true))
             {
-                return 0d < pValue;
+                return 0d < MaxValue;
             }
 
-            return double.Parse(value.ToString()) < pValue;
+            return double.Parse(value.ToString()) < MaxValue;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

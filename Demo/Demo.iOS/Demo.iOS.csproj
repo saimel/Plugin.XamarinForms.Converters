@@ -128,6 +128,10 @@
       <Project>{DC3F9FCC-2CBF-4EEB-B679-844033B3BB7D}</Project>
       <Name>Demo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Plugin.XamarinForms.Converters\Plugin.XamarinForms.Converters.csproj">
+      <Project>{367DD2D7-4A9A-4E66-8532-A2D94225605C}</Project>
+      <Name>Plugin.XamarinForms.Converters</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

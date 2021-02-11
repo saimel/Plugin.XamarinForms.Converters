@@ -30,7 +30,7 @@ And then you can use it on this way:
             
 <Label Text="{Binding Text, Converter={conv:ToLowerCaseConverter}}" />
             
-<Label Text="{Binding Text, Converter={conv:SubstringConverter}, ConverterParameter=35}" />
+<Label Text="{Binding Text, Converter={conv:SubstringConverter, MaxLenght=35}}" />
 
 <Entry Text="{Binding Number, Mode=TwoWay, Converter={conv:EmptyToZeroConverter}}" Keyboard="Numeric" />
 
@@ -66,7 +66,7 @@ public enum EventType
 #### There are more useful converters in this package you can use
 
 * __General__
-  * EqualsConverter _(required parameter)_
+  * EqualsConverter _(requires additional property)_
   * InvertedBoolConverter
   * IsNotNullConverter
   * IsNullConverter
@@ -83,13 +83,14 @@ public enum EventType
   * IsNegativeConverter
   * IsNonPositiveConverter
   * IsNonNegativeConverter
-  * IsLesserThanConverter _(required parameter)_
-  * IsLesserOrEqualThanConverter _(required parameter)_
-  * IsGreaterThanConverter _(required parameter)_
-  * IsGreaterOrEqualThanConverter _(required parameter)_  
+  * IsLesserThanConverter _(requires additional property)_
+  * IsLesserOrEqualThanConverter _(requires additional property)_
+  * IsGreaterThanConverter _(requires additional property)_
+  * IsGreaterOrEqualThanConverter _(requires additional property)_  
+  * IsInRangeConverter _(requires additional properties)_  
   
 * __String__
-  * SubstringConverter <sup>[[Read more]](#substringconverter)</sup> _(optional parameter)_
+  * SubstringConverter <sup>[[Read more]](#substringconverter)</sup> _(optional property)_
   * ToLowerCaseConverter
   * ToUpperCaseConverterer
   * IsNonNullOrWhitespaceConverter <sup>A collaboration from [[ronymesquita]](https://github.com/ronymesquita)</sup> 
@@ -102,12 +103,8 @@ public enum EventType
         <FormattedString>
             <Span Text="Is equal to 10.5: " />
             <Span.Text>
-                <Binding Path="Number" Converter="{conv:EqualsConverter}"> 
-                    <Binding.ConverterParameter>
-                        <x:Double>10.5</x:Double>
-                    </Binding.ConverterParameter>
-                </Binding>
-            </Span.Text>
+                <Binding Text="{Binding Number, Converter={conv:EqualsConverter CompareTo=10.0}}" />
+			  </Span.Text>
         </FormattedString>
     </Label.FormattedText>
 </Label>

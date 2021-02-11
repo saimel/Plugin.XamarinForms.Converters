@@ -15,13 +15,11 @@ namespace Plugin.XamarinForms.Converters
 {
     public class EqualsConverter : IValueConverter, IMarkupExtension
     {
+        public object CompareTo { get; set; }
+
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null) {
-                return parameter == null;
-            }
-
-            return value.Equals(parameter);
+            return Equals(value, CompareTo);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
