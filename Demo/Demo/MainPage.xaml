@@ -46,19 +46,16 @@
                        Grid.Row="3" Grid.Column="1" />
             
                 <Label Text="Number is equal to 10" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="4" Grid.ColumnSpan="2" />
-                <Label Style="{x:StaticResource lblDataStyle}" Grid.Row="4" Grid.Column="2">
-                    <Label.Text>
-                        <Binding Path="Number" Converter="{conv:EqualsConverter}"> 
-                            <Binding.ConverterParameter>
-                                <x:Double>10.0</x:Double>
-                            </Binding.ConverterParameter>
-                        </Binding>
-                    </Label.Text>
-                </Label>
+                <Label Text="{Binding Number, Converter={conv:EqualsConverter CompareTo=10.0}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="4" Grid.Column="2" />
             
-                <Label Text="Number is positive (&gt; 0)" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="5" Grid.ColumnSpan="2" />
-                <Label Text="{Binding Number, Converter={conv:IsPositiveConverter}}"
+                <Label Text="Number is in range [20,100]" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="5" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsInRangeConverter MinValue=20, MaxValue=100, Edges=Left}}"
                        Style="{x:StaticResource lblDataStyle}" Grid.Row="5" Grid.Column="2" />
+            
+                <!--<Label Text="Number is positive (&gt; 0)" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="5" Grid.ColumnSpan="2" />
+                <Label Text="{Binding Number, Converter={conv:IsPositiveConverter}}"
+                       Style="{x:StaticResource lblDataStyle}" Grid.Row="5" Grid.Column="2" />-->
             
                 <Label Text="Number is negative (&lt; 0)" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="6" Grid.ColumnSpan="2" />
                 <Label Text="{Binding Number, Converter={conv:IsNegativeConverter}}"
@@ -73,19 +70,19 @@
                        Style="{x:StaticResource lblDataStyle}" Grid.Row="8" Grid.Column="2" />
             
                 <Label Text="Number is &gt;= 99" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="9" Grid.ColumnSpan="2" />
-                <Label Text="{Binding Number, Converter={conv:IsGreaterOrEqualThanConverter}, ConverterParameter=99}"
+                <Label Text="{Binding Number, Converter={conv:IsGreaterOrEqualThanConverter MinValue=99}}"
                        Style="{x:StaticResource lblDataStyle}" Grid.Row="9" Grid.Column="2" />
             
                 <Label Text="Number is &gt; 55.9" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="10" Grid.ColumnSpan="2" />
-                <Label Text="{Binding Number, Converter={conv:IsGreaterThanConverter}, ConverterParameter=55.9}"
+                <Label Text="{Binding Number, Converter={conv:IsGreaterThanConverter MinValue=55.9}}"
                        Style="{x:StaticResource lblDataStyle}" Grid.Row="10" Grid.Column="2" />
             
                 <Label Text="Number is &lt;= 11.1" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="11" Grid.ColumnSpan="2" />
-                <Label Text="{Binding Number, Converter={conv:IsLesserOrEqualThanConverter}, ConverterParameter=11.1}"
+                <Label Text="{Binding Number, Converter={conv:IsLesserOrEqualThanConverter MaxValue=11.1}}"
                        Style="{x:StaticResource lblDataStyle}" Grid.Row="11" Grid.Column="2" />
             
                 <Label Text="Number is &lt; -33.6" Style="{x:StaticResource lblCaptionStyle}" Grid.Row="12" Grid.ColumnSpan="2" />
-                <Label Text="{Binding Number, Converter={conv:IsLesserThanConverter}, ConverterParameter=-33.6}"
+                <Label Text="{Binding Number, Converter={conv:IsLesserThanConverter MaxValue=-33.6}}"
                        Style="{x:StaticResource lblDataStyle}" Grid.Row="12" Grid.Column="2" />
 
 
