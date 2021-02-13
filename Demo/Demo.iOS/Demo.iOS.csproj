@@ -122,15 +122,14 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.673161-pre3" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.0-pre" />
+    <PackageReference Include="Plugin.XamarinForms.Converters">
+      <Version>1.2.1.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo\Demo.csproj">
       <Project>{DC3F9FCC-2CBF-4EEB-B679-844033B3BB7D}</Project>
       <Name>Demo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Plugin.XamarinForms.Converters\Plugin.XamarinForms.Converters.csproj">
-      <Project>{367DD2D7-4A9A-4E66-8532-A2D94225605C}</Project>
-      <Name>Plugin.XamarinForms.Converters</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
